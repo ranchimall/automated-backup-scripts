@@ -13,7 +13,6 @@ def make_archive(source, destination):
     shutil.move('%s.%s'%(name,format), destination)
     
 # using now() to get current time 
-current_time = datetime.datetime.now() 
 backup_directory = f"{os.getcwd()}/backups/token-tracking"
 
 os.chdir(os.getcwd())
@@ -28,9 +27,12 @@ pdb.set_trace()
 # Flo Token Tracking 
 folder_location = '/home/production/deployed/flo-token-tracking-apiErrorHandling'
 #shutil.make_archive(f"flo-token-tracking-backup-{current_time.year}-{current_time.month}-{current_time.day}-{current_time.hour}-{current_time.minute}-{current_time.second}", 'zip', folder_location)
+current_time = datetime.datetime.now() 
 make_archive(folder_location, f"{os.getcwd()}/backups/flo-token-tracking-backup-{current_time.year}-{current_time.month}-{current_time.day}-{current_time.hour}-{current_time.minute}-{current_time.second}.zip")
 
 if len(list_of_files) >= 3:
     os.remove(f"{os.getcwd()}/backups/token-tracking/{list_of_files[0]}")
 
-# Flosight 
+# Flosight
+
+
